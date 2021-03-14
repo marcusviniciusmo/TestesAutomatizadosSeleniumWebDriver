@@ -1,6 +1,7 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting; // Dependecies Assert
 using OpenQA.Selenium.Remote; // Dependencies RemoteWebDriver
 using OpenQA.Selenium.Firefox; // Dependencies Firefox
+using OpenQA.Selenium; // Dependencies IWebElement
 
 namespace TestesAutomatizadosSeleniumWebDriver.DSL.Common
 {
@@ -31,6 +32,13 @@ namespace TestesAutomatizadosSeleniumWebDriver.DSL.Common
         public static void AssertUrlPage(string urlPage)
         {
             Assert.IsTrue(DriverFirefox.PageSource.Contains(urlPage));
+        }
+
+        /* ==================================================  ELEMENT DISPLAYED  ==================================================*/
+        // Verifica a visibilidade de um elemento na página.
+        public static void CheckElementDisplayed(IWebElement elementDisplayed)
+        {
+            Assert.IsTrue(elementDisplayed.Displayed);
         }
     }
 }
