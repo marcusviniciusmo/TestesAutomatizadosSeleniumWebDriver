@@ -4,6 +4,8 @@ using TestesAutomatizadosSeleniumWebDriver.URLS.Cosmos; // Dependencies URLS.Cos
 using TestesAutomatizadosSeleniumWebDriver.TESTS.Common; // Dependencies TESTS.Common
 using TestesAutomatizadosSeleniumWebDriver.PAGES.Common; // Dependencies PAGES.Common
 using TestesAutomatizadosSeleniumWebDriver.PAGES.Cosmos; // Dependencies PAGES.Cosmos
+using TestesAutomatizadosSeleniumWebDriver.VALUES.Common; // Dependencies VALUES.Common
+using TestesAutomatizadosSeleniumWebDriver.VALUES.Cosmos; // Dependencies VALUES.Cosmos
 
 namespace TestesAutomatizadosSeleniumWebDriver.TESTS.Cosmos
 {
@@ -63,6 +65,42 @@ namespace TestesAutomatizadosSeleniumWebDriver.TESTS.Cosmos
         public void CheckFooterDisplayed()
         {
             DSL_Common_For_All.CheckElementDisplayed(new PAGE_Common_For_Cosmos(DriverFirefox).FooterEmpreendimentosPagueMenos());
+        }
+
+        /* ==================================================  ORTHOGRAPHY  ==================================================*/
+        // Verifica a ortografia do link CosmosNet na página "Autenticação do Usuário" no Cosmos.
+        [TestMethod]
+        public void CompareLinkCosmosNetOrthography()
+        {
+            DSL_Common_For_All.CompareOrthographyTextElement(VALUE_Common_For_Cosmos.LinkCosmosNet,
+                new PAGE_Common_For_Cosmos(DriverFirefox).LinkCosmosNet());
+        }
+
+        // Verifica a ortografia dos labels na página "Autenticação do Usuário" no Cosmos.
+        [TestMethod]
+        public void CompareLabelsOrthography()
+        {
+            DSL_Common_For_All.CompareOrthographyTextElement(VALUE_Autenticacao_Do_Usuario.LabelAutenticacaoDoUsuario,
+                new PAGE_Autenticacao_Do_Usuario(DriverFirefox).LabelAutenticacaoDoUsuario());
+            DSL_Common_For_All.CompareOrthographyTextElement(VALUE_Autenticacao_Do_Usuario.LabelUsuario,
+                new PAGE_Autenticacao_Do_Usuario(DriverFirefox).LabelUsuario());
+            DSL_Common_For_All.CompareOrthographyTextElement(VALUE_Autenticacao_Do_Usuario.LabelSenha,
+                new PAGE_Autenticacao_Do_Usuario(DriverFirefox).LabelSenha());
+        }
+
+        // Verifica a ortografia do botão "Efetuar Login" na página "Autenticação do Usuário" no Cosmos.
+        [TestMethod]
+        public void CompareButtonOrthography()
+        {
+            DSL.Cosmos.DSL_Autenticacao_Do_Usuario.CompareButtonOrthography(VALUE_Autenticacao_Do_Usuario.ButtonEfetuarLogin);
+        }
+
+        // Verifica a ortografia do rodapé "Empreendimentos Pague Menos" na página "Autenticação do Usuário" no Cosmos.
+        [TestMethod]
+        public void CompareFooterOrthography()
+        {
+            DSL_Common_For_All.CompareOrthographyTextElement(VALUE_Common_For_Cosmos.FooterEmpreendimentosPagueMenos,
+                new PAGE_Common_For_Cosmos(DriverFirefox).FooterEmpreendimentosPagueMenos());
         }
     }
 }

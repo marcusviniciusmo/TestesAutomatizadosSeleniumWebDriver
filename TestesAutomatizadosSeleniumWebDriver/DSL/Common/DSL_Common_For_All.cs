@@ -40,5 +40,12 @@ namespace TestesAutomatizadosSeleniumWebDriver.DSL.Common
         {
             Assert.IsTrue(elementDisplayed.Displayed);
         }
+
+        /* ==================================================  COMPARE ORTHOGRAPHY  ==================================================*/
+        // Compara a ortografia do texto do elemento com um valor esperado.
+        public static void CompareOrthographyTextElement(string expectedText, IWebElement actualElement)
+        {
+            Assert.AreEqual(expectedText, actualElement.Text);
+        }
     }
 }
