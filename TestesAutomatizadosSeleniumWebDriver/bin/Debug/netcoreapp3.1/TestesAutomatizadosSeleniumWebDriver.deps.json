@@ -8,8 +8,9 @@
     ".NETCoreApp,Version=v3.1": {
       "TestesAutomatizadosSeleniumWebDriver/1.0.0": {
         "dependencies": {
-          "MSTest.TestAdapter": "2.2.1",
-          "MSTest.TestFramework": "2.2.1",
+          "DotNetSeleniumExtras.WaitHelpers": "3.11.0",
+          "MSTest.TestAdapter": "2.2.3",
+          "MSTest.TestFramework": "2.2.3",
           "Microsoft.NET.Test.Sdk": "16.9.1",
           "NUnitTestAdapter": "2.3.0",
           "Selenium.Support": "3.141.0",
@@ -22,6 +23,17 @@
         }
       },
       "coverlet.collector/3.0.3": {},
+      "DotNetSeleniumExtras.WaitHelpers/3.11.0": {
+        "dependencies": {
+          "Selenium.WebDriver": "3.141.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/SeleniumExtras.WaitHelpers.dll": {
+            "assemblyVersion": "3.11.0.0",
+            "fileVersion": "3.11.0.0"
+          }
+        }
+      },
       "Microsoft.CodeCoverage/16.9.1": {
         "runtime": {
           "lib/netcoreapp1.0/Microsoft.VisualStudio.CodeCoverage.Shim.dll": {
@@ -58,58 +70,6 @@
       },
       "Microsoft.NETCore.Platforms/1.1.0": {},
       "Microsoft.NETCore.Targets/1.1.0": {},
-      "Microsoft.TestPlatform.AdapterUtilities/16.9.1": {
-        "dependencies": {
-          "NETStandard.Library": "1.6.1"
-        },
-        "runtime": {
-          "lib/netstandard2.0/Microsoft.TestPlatform.AdapterUtilities.dll": {
-            "assemblyVersion": "15.0.0.0",
-            "fileVersion": "15.0.0.0"
-          }
-        },
-        "resources": {
-          "lib/netstandard2.0/cs/Microsoft.TestPlatform.AdapterUtilities.resources.dll": {
-            "locale": "cs"
-          },
-          "lib/netstandard2.0/de/Microsoft.TestPlatform.AdapterUtilities.resources.dll": {
-            "locale": "de"
-          },
-          "lib/netstandard2.0/es/Microsoft.TestPlatform.AdapterUtilities.resources.dll": {
-            "locale": "es"
-          },
-          "lib/netstandard2.0/fr/Microsoft.TestPlatform.AdapterUtilities.resources.dll": {
-            "locale": "fr"
-          },
-          "lib/netstandard2.0/it/Microsoft.TestPlatform.AdapterUtilities.resources.dll": {
-            "locale": "it"
-          },
-          "lib/netstandard2.0/ja/Microsoft.TestPlatform.AdapterUtilities.resources.dll": {
-            "locale": "ja"
-          },
-          "lib/netstandard2.0/ko/Microsoft.TestPlatform.AdapterUtilities.resources.dll": {
-            "locale": "ko"
-          },
-          "lib/netstandard2.0/pl/Microsoft.TestPlatform.AdapterUtilities.resources.dll": {
-            "locale": "pl"
-          },
-          "lib/netstandard2.0/pt-BR/Microsoft.TestPlatform.AdapterUtilities.resources.dll": {
-            "locale": "pt-BR"
-          },
-          "lib/netstandard2.0/ru/Microsoft.TestPlatform.AdapterUtilities.resources.dll": {
-            "locale": "ru"
-          },
-          "lib/netstandard2.0/tr/Microsoft.TestPlatform.AdapterUtilities.resources.dll": {
-            "locale": "tr"
-          },
-          "lib/netstandard2.0/zh-Hans/Microsoft.TestPlatform.AdapterUtilities.resources.dll": {
-            "locale": "zh-Hans"
-          },
-          "lib/netstandard2.0/zh-Hant/Microsoft.TestPlatform.AdapterUtilities.resources.dll": {
-            "locale": "zh-Hant"
-          }
-        }
-      },
       "Microsoft.TestPlatform.ObjectModel/16.9.1": {
         "dependencies": {
           "NuGet.Frameworks": "5.0.0",
@@ -364,25 +324,25 @@
           "System.Runtime": "4.3.0"
         }
       },
-      "MSTest.TestAdapter/2.2.1": {
+      "MSTest.TestAdapter/2.2.3": {
         "dependencies": {
-          "Microsoft.TestPlatform.AdapterUtilities": "16.9.1"
+          "NETStandard.Library": "1.6.1",
+          "System.Diagnostics.TextWriterTraceListener": "4.3.0"
         }
       },
-      "MSTest.TestFramework/2.2.1": {
+      "MSTest.TestFramework/2.2.3": {
         "dependencies": {
-          "Microsoft.TestPlatform.AdapterUtilities": "16.9.1",
           "NETStandard.Library": "1.6.1",
           "System.Diagnostics.TextWriterTraceListener": "4.3.0"
         },
         "runtime": {
           "lib/netstandard1.0/Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll": {
             "assemblyVersion": "14.0.0.0",
-            "fileVersion": "14.0.5801.4"
+            "fileVersion": "14.0.5816.2"
           },
           "lib/netstandard1.0/Microsoft.VisualStudio.TestPlatform.TestFramework.dll": {
             "assemblyVersion": "14.0.0.0",
-            "fileVersion": "14.0.5801.4"
+            "fileVersion": "14.0.5816.2"
           }
         }
       },
@@ -1229,6 +1189,13 @@
       "path": "coverlet.collector/3.0.3",
       "hashPath": "coverlet.collector.3.0.3.nupkg.sha512"
     },
+    "DotNetSeleniumExtras.WaitHelpers/3.11.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-xc6jVVl5ymgk3ZNWnC/KHxkEup1QpnwYbrwF+NQoCOGERsD8YMlLwmsX4lGhLXCLo/YQTRTIwlKCN9E/doGUNg==",
+      "path": "dotnetseleniumextras.waithelpers/3.11.0",
+      "hashPath": "dotnetseleniumextras.waithelpers.3.11.0.nupkg.sha512"
+    },
     "Microsoft.CodeCoverage/16.9.1": {
       "type": "package",
       "serviceable": true,
@@ -1264,13 +1231,6 @@
       "path": "microsoft.netcore.targets/1.1.0",
       "hashPath": "microsoft.netcore.targets.1.1.0.nupkg.sha512"
     },
-    "Microsoft.TestPlatform.AdapterUtilities/16.9.1": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-pI8TPPirXoBlu/kY657gtA+vGMgLR9JFFgVBqERi+ugGm/xli2NcvNLw9EzioOQ7Dki8E4RhJK0fM1SBB4qmdg==",
-      "path": "microsoft.testplatform.adapterutilities/16.9.1",
-      "hashPath": "microsoft.testplatform.adapterutilities.16.9.1.nupkg.sha512"
-    },
     "Microsoft.TestPlatform.ObjectModel/16.9.1": {
       "type": "package",
       "serviceable": true,
@@ -1292,19 +1252,19 @@
       "path": "microsoft.win32.primitives/4.3.0",
       "hashPath": "microsoft.win32.primitives.4.3.0.nupkg.sha512"
     },
-    "MSTest.TestAdapter/2.2.1": {
+    "MSTest.TestAdapter/2.2.3": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-QwK0Oxk38qQwgaIRMFMxJD8wQv8Ipd5MC2KisamyNsqYTw+wrLS7rZ43rpn/tWIzMcjLmuvq+M0ojUaZfqNnQQ==",
-      "path": "mstest.testadapter/2.2.1",
-      "hashPath": "mstest.testadapter.2.2.1.nupkg.sha512"
+      "sha512": "sha512-Xxc6+JyELKOmM46CYrHxL9f2LMZGnx1Neh0dr52THZbmVTwlJM1tj0U5RQ50G+wxsfsU8ZfR1HAUugc+64b6TA==",
+      "path": "mstest.testadapter/2.2.3",
+      "hashPath": "mstest.testadapter.2.2.3.nupkg.sha512"
     },
-    "MSTest.TestFramework/2.2.1": {
+    "MSTest.TestFramework/2.2.3": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-mZb1TfZ0/l+WH1dAR2QsgIOvg8vUjANUHhBIWN5I8BL1eK5n9/j7WDPNP8N2sVK6d21OT205oQHIU90WYpDKSA==",
-      "path": "mstest.testframework/2.2.1",
-      "hashPath": "mstest.testframework.2.2.1.nupkg.sha512"
+      "sha512": "sha512-wqrF2D/uqhTCFJ4bQjhf5vLPXnsjbRZMncr2/+wnhy922YAqLGO2VOjQ6grxGqOWyVWFeIDnQFpLKFRNnrAd7w==",
+      "path": "mstest.testframework/2.2.3",
+      "hashPath": "mstest.testframework.2.2.3.nupkg.sha512"
     },
     "NETStandard.Library/1.6.1": {
       "type": "package",

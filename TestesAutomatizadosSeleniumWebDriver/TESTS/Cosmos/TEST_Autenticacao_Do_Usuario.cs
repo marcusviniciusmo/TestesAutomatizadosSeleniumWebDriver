@@ -6,6 +6,7 @@ using TestesAutomatizadosSeleniumWebDriver.PAGES.Common; // Dependencies PAGES.C
 using TestesAutomatizadosSeleniumWebDriver.PAGES.Cosmos; // Dependencies PAGES.Cosmos
 using TestesAutomatizadosSeleniumWebDriver.VALUES.Common; // Dependencies VALUES.Common
 using TestesAutomatizadosSeleniumWebDriver.VALUES.Cosmos; // Dependencies VALUES.Cosmos
+using TestesAutomatizadosSeleniumWebDriver.UTILS.Common; // Dependencies UTILS.Common
 
 namespace TestesAutomatizadosSeleniumWebDriver.TESTS.Cosmos
 {
@@ -17,7 +18,7 @@ namespace TestesAutomatizadosSeleniumWebDriver.TESTS.Cosmos
         [TestMethod]
         public void AssertUrlPageAutenticacaoDoUsuario()
         {
-            DSL_Common_For_All.AssertUrlPage(URL_Autenticacao_Do_Usuario.UrlAutenticacaoDoUsuario);
+            DSL_Common_For_All.WaitPageOnChange(URL_Autenticacao_Do_Usuario.UrlAutenticacaoDoUsuario);
         }
 
         /* ==================================================  ELEMENTS DISPLAYED  ==================================================*/
@@ -101,6 +102,22 @@ namespace TestesAutomatizadosSeleniumWebDriver.TESTS.Cosmos
         {
             DSL_Common_For_All.CompareOrthographyTextElement(VALUE_Common_For_Cosmos.FooterEmpreendimentosPagueMenos,
                 new PAGE_Common_For_Cosmos(DriverFirefox).FooterEmpreendimentosPagueMenos());
+        }
+
+        /* ==================================================  CLICK LINK  ==================================================*/
+        // Clica no link "CosmosNet" na página "Autenticação do Usuário" no Cosmos.
+        [TestMethod]
+        public void ClickLinkCosmosNet()
+        {
+            DSL_Common_For_All.ClickElement(new PAGE_Common_For_Cosmos(DriverFirefox).LinkCosmosNet());
+        }
+
+        // Clica no link "CosmosNet" na página "Autenticação do Usuário" no Cosmos, validando a URL Logout.
+        [TestMethod]
+        public void ClickLinkCosmosNetValidatingUrl()
+        {
+            DSL_Common_For_All.ClickElement(new PAGE_Common_For_Cosmos(DriverFirefox).LinkCosmosNet(), UTIL_Common_For_All.OneSecond());
+            DSL_Common_For_All.WaitPageOnChange(URL_Logoff.UrlLogoff);
         }
     }
 }

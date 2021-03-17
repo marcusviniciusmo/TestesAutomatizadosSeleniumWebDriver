@@ -2,6 +2,11 @@
 using OpenQA.Selenium.Remote; // Dependencies RemoteWebDriver
 using OpenQA.Selenium.Firefox; // Dependencies Firefox
 using OpenQA.Selenium; // Dependencies IWebElement
+using System.Threading; // Dependencies Thread
+using OpenQA.Selenium.Support.UI; // Dependencies WebDriverWait
+using System; // Dependencies TimeSpan
+using TestesAutomatizadosSeleniumWebDriver.UTILS.Common; // Dependencies UTILS.Common
+using TestesAutomatizadosSeleniumWebDriver.URLS.Cosmos; // Dependencies URLS.Cosmos
 
 namespace TestesAutomatizadosSeleniumWebDriver.DSL.Common
 {
@@ -27,11 +32,18 @@ namespace TestesAutomatizadosSeleniumWebDriver.DSL.Common
             return DriverFirefox;
         }
 
-        /* ==================================================  ASSERT URL  ==================================================*/
-        // Afirma que a URL da página está correta.
-        public static void AssertUrlPage(string urlPage)
+        /* ==================================================  WAITS  ==================================================*/
+        // Cria um tempo de espera para executar uma ação.
+        public static void SimpleWait(int wait)
         {
-            Assert.IsTrue(DriverFirefox.PageSource.Contains(urlPage));
+            Thread.Sleep(wait);
+        }
+
+        // Cria um tempo de espera até que a página contenha uma url.
+        public static void WaitPageOnChange(string urlPage)
+        {
+            WebDriverWait wait = new WebDriverWait(DriverFirefox, TimeSpan.FromSeconds(UTIL_Common_For_All.WaitPageOnChange()));
+            wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.UrlContains(urlPage));
         }
 
         /* ==================================================  ELEMENT DISPLAYED  ==================================================*/
@@ -46,6 +58,16 @@ namespace TestesAutomatizadosSeleniumWebDriver.DSL.Common
         public static void CompareOrthographyTextElement(string expectedText, IWebElement actualElement)
         {
             Assert.AreEqual(expectedText, actualElement.Text);
+        }
+
+        /* ==================================================  CLICK ELEMENT  ==================================================*/
+        // Clica em um elemento na página.
+        public static void ClickElement(IWebElement elementToClick, int wait = 0)
+        {
+            if (wait > 0)
+                SimpleWait(wait);
+
+            elementToClick.Click();
         }
     }
 }
