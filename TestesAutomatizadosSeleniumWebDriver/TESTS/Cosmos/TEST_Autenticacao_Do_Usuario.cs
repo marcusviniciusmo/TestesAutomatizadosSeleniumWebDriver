@@ -119,5 +119,78 @@ namespace TestesAutomatizadosSeleniumWebDriver.TESTS.Cosmos
             DSL_Common_For_All.ClickElement(new PAGE_Common_For_Cosmos(DriverFirefox).LinkCosmosNet(), UTIL_Common_For_All.OneSecond());
             DSL_Common_For_All.WaitPageOnChange(URL_Logoff.UrlLogoff);
         }
+
+        /* ==================================================  TYPE  ==================================================*/
+        // Digita um valor qualquer nos campos da página.
+        [TestMethod]
+        public void TypeTextInInputs()
+        {
+            DSL_Common_For_All.ToType(VALUE_Common_For_All.DefaultUser, new PAGE_Autenticacao_Do_Usuario(DriverFirefox).InputUsuario());
+            DSL_Common_For_All.ToType(VALUE_Common_For_All.DefaultPassword, new PAGE_Autenticacao_Do_Usuario(DriverFirefox).InputSenha());
+        }
+
+        // Digita letras no campo usuário.
+        [TestMethod]
+        public void TypeTextInUserInput()
+        {
+            DSL_Common_For_All.ToType(VALUE_Common_For_All.StringUser, new PAGE_Autenticacao_Do_Usuario(DriverFirefox).InputUsuario());
+        }
+
+        /* ==================================================  LOGIN  ==================================================*/
+        // Logar sem digigar uma matrícula.
+        [TestMethod]
+        public void LogIntoWithoutUser()
+        {
+            DSL_Common_For_All.ToType(VALUE_Common_For_All.DefaultPassword, new PAGE_Autenticacao_Do_Usuario(DriverFirefox).InputSenha());
+            DSL_Common_For_All.ClickElement(new PAGE_Autenticacao_Do_Usuario(DriverFirefox).ButtonEfetuarLogin(), UTIL_Common_For_All.OneSecond());
+            DSL_Common_For_All.CheckElementDisplayed(new PAGE_Autenticacao_Do_Usuario(DriverFirefox).MessageRequiredUser());
+            DSL_Common_For_All.CompareOrthographyTextElement(VALUE_Autenticacao_Do_Usuario.MessageRequired,
+                new PAGE_Autenticacao_Do_Usuario(DriverFirefox).MessageRequiredUser());
+        }
+
+        // Logar sem digitar uma senha.
+        [TestMethod]
+        public void LogIntoWithoutPassword()
+        {
+            DSL_Common_For_All.ToType(VALUE_Common_For_All.DefaultUser, new PAGE_Autenticacao_Do_Usuario(DriverFirefox).InputUsuario());
+            DSL_Common_For_All.ClickElement(new PAGE_Autenticacao_Do_Usuario(DriverFirefox).ButtonEfetuarLogin(), UTIL_Common_For_All.OneSecond());
+            DSL_Common_For_All.CheckElementDisplayed(new PAGE_Autenticacao_Do_Usuario(DriverFirefox).MessageRequiredPassword());
+            DSL_Common_For_All.CompareOrthographyTextElement(VALUE_Autenticacao_Do_Usuario.MessageRequired,
+                new PAGE_Autenticacao_Do_Usuario(DriverFirefox).MessageRequiredPassword());
+        }
+
+        // Logar sem digitar matrícula e senha.
+        [TestMethod]
+        public void LogIntoWithoutEntry()
+        {
+            DSL_Common_For_All.ClickElement(new PAGE_Autenticacao_Do_Usuario(DriverFirefox).ButtonEfetuarLogin(), UTIL_Common_For_All.OneSecond());
+            DSL_Common_For_All.CheckElementDisplayed(new PAGE_Autenticacao_Do_Usuario(DriverFirefox).MessageRequiredUser());
+            DSL_Common_For_All.CheckElementDisplayed(new PAGE_Autenticacao_Do_Usuario(DriverFirefox).MessageRequiredPassword());
+            DSL_Common_For_All.CompareOrthographyTextElement(VALUE_Autenticacao_Do_Usuario.MessageRequired,
+                new PAGE_Autenticacao_Do_Usuario(DriverFirefox).MessageRequiredUser());
+            DSL_Common_For_All.CompareOrthographyTextElement(VALUE_Autenticacao_Do_Usuario.MessageRequired,
+                new PAGE_Autenticacao_Do_Usuario(DriverFirefox).MessageRequiredPassword());
+        }
+
+        // Logar com uma matrícula inválida.
+        [TestMethod]
+        public void LogIntoWthAnInvalidUser()
+        {
+            DSL_Common_For_All.ToType(VALUE_Common_For_All.InvalidUser, new PAGE_Autenticacao_Do_Usuario(DriverFirefox).InputUsuario());
+            DSL_Common_For_All.ToType(VALUE_Common_For_All.DefaultPassword, new PAGE_Autenticacao_Do_Usuario(DriverFirefox).InputSenha());
+            DSL_Common_For_All.ClickElement(new PAGE_Autenticacao_Do_Usuario(DriverFirefox).ButtonEfetuarLogin(), UTIL_Common_For_All.OneSecond());
+            DSL_Common_For_All.WaitPageOnChange(URL_Cosmos.UrlCosmos);
+            DSL_Common_For_All.CheckPageSource(VALUE_Cosmos.ErrorLoginCosmos);
+        }
+
+        // Logar no Cosmos.
+        [TestMethod]
+        public void LoginSuccess()
+        {
+            DSL_Common_For_All.ToType(VALUE_Common_For_All.DefaultUser, new PAGE_Autenticacao_Do_Usuario(DriverFirefox).InputUsuario());
+            DSL_Common_For_All.ToType(VALUE_Common_For_All.DefaultPassword, new PAGE_Autenticacao_Do_Usuario(DriverFirefox).InputSenha());
+            DSL_Common_For_All.ClickElement(new PAGE_Autenticacao_Do_Usuario(DriverFirefox).ButtonEfetuarLogin(), UTIL_Common_For_All.OneSecond());
+            DSL_Common_For_All.WaitPageOnChange(URL_Cosmos.UrlCosmos);
+        }
     }
 }

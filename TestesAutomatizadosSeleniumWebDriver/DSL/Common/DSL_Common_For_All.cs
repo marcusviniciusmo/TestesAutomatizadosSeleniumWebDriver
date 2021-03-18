@@ -1,12 +1,13 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting; // Dependecies Assert
-using OpenQA.Selenium.Remote; // Dependencies RemoteWebDriver
-using OpenQA.Selenium.Firefox; // Dependencies Firefox
 using OpenQA.Selenium; // Dependencies IWebElement
-using System.Threading; // Dependencies Thread
+using OpenQA.Selenium.Firefox; // Dependencies Firefox
+using OpenQA.Selenium.Remote; // Dependencies RemoteWebDriver
 using OpenQA.Selenium.Support.UI; // Dependencies WebDriverWait
 using System; // Dependencies TimeSpan
+using System.Threading; // Dependencies Thread
 using TestesAutomatizadosSeleniumWebDriver.UTILS.Common; // Dependencies UTILS.Common
-using TestesAutomatizadosSeleniumWebDriver.URLS.Cosmos; // Dependencies URLS.Cosmos
+using TestesAutomatizadosSeleniumWebDriver.PAGES.Cosmos; // Dependencies PAGES.Cosmos
+using TestesAutomatizadosSeleniumWebDriver.VALUES.Common; // Dependencies VALUES.Common
 
 namespace TestesAutomatizadosSeleniumWebDriver.DSL.Common
 {
@@ -68,6 +69,20 @@ namespace TestesAutomatizadosSeleniumWebDriver.DSL.Common
                 SimpleWait(wait);
 
             elementToClick.Click();
+        }
+
+        /* ==================================================  TYPE  ==================================================*/
+        // Digita um texto em um campo da página.
+        public static void ToType(string textToType, IWebElement input)
+        {
+            input.SendKeys(textToType);
+        }
+
+        /* ==================================================  PAGE SOURCE  ==================================================*/
+        // Verifica se página contém o código passado como parâmetro.
+        public static void CheckPageSource(string pageSource)
+        {
+            Assert.IsTrue(DriverFirefox.PageSource.Contains(pageSource));
         }
     }
 }

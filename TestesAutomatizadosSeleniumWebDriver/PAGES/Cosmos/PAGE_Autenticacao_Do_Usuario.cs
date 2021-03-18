@@ -30,5 +30,12 @@ namespace TestesAutomatizadosSeleniumWebDriver.PAGES.Cosmos
         /* ==================================================  BUTTON  ==================================================*/
         // Botão "Efetuar Login" na página.
         public IWebElement ButtonEfetuarLogin() { return NovoDriverFirefox.FindElement(By.CssSelector(PATH_Autenticacao_Do_Usuario.ButtonEfetuarLogin)); }
+
+        /* ==================================================  REQUIRED MESSAGE  ==================================================*/
+        // Mensagem "Campo Obrigatório" para Usuário na página.
+        public IWebElement MessageRequiredUser() { return NovoDriverFirefox.FindElement(By.XPath(PATH_Autenticacao_Do_Usuario.MessageRequiredUser)); }
+
+        // Mensagem "Campo Obrigatório" para Senha na página.
+        public IWebElement MessageRequiredPassword() { return NovoDriverFirefox.FindElement(By.XPath(PATH_Autenticacao_Do_Usuario.MessageRequiredPassword)); }
     }
 }

@@ -11,6 +11,7 @@ namespace TestesAutomatizadosSeleniumWebDriver.TESTS.Common
         protected RemoteWebDriver DriverFirefox = driver.GoToCosmosNet(URL_Autenticacao_Do_Usuario.UrlAutenticacaoDoUsuario); // Acessa o CosmosNet
 
         /* ==================================================  CLOSE FIREFOX  ==================================================*/
+        // Fecha o navegador Firefox.
         [TestCleanup]
         public void CloseFirefox()
         {

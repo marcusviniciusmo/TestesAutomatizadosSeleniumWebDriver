@@ -13,5 +13,10 @@
 
         public static string InputUsuario = "Usuario";
         public static string InputSenha = "Senha";
+
+        /* ==================================================  X PATH  ==================================================*/
+
+        public static string MessageRequiredUser = "/html/body/div/div/div[2]/div[2]/div[2]/div[1]/div[2]/div/div/form/fieldset/div/span[1]/span";
+        public static string MessageRequiredPassword = "/html/body/div/div/div[2]/div[2]/div[2]/div[1]/div[2]/div/div/form/fieldset/div/span[2]/span";
     }
 }

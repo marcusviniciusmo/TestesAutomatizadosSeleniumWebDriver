@@ -15,5 +15,9 @@
         /* ==================================================  BUTTON  ==================================================*/
         // Botão "Efetuar Login" na página.
         public static string ButtonEfetuarLogin = "Efetuar Login";
+
+        /* ==================================================  REQUIRED MESSAGE  ==================================================*/
+        // Mensagem "Campo Obrigatório" na página.
+        public static string MessageRequired = "Campo Obrigatório.";
     }
 }
