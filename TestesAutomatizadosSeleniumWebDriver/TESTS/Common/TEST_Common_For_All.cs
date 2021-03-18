@@ -2,6 +2,7 @@
 using OpenQA.Selenium.Remote; // Dependencies RemoteWebDriver
 using TestesAutomatizadosSeleniumWebDriver.URLS.Cosmos; // Dependencies URLS.Cosmos
 using Microsoft.VisualStudio.TestTools.UnitTesting; // Dependencies TestClass
+using TestesAutomatizadosSeleniumWebDriver.UTILS.Common; // Dependencies UTILS.Common
 
 namespace TestesAutomatizadosSeleniumWebDriver.TESTS.Common
 {
@@ -15,6 +16,7 @@ namespace TestesAutomatizadosSeleniumWebDriver.TESTS.Common
         [TestCleanup]
         public void CloseFirefox()
         {
+            DSL_Common_For_All.SimpleWait(UTIL_Common_For_All.OneSecond());
             DriverFirefox.Quit();
         }
     }
