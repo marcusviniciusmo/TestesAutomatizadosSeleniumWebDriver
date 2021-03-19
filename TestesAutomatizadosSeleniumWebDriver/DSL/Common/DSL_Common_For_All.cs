@@ -6,8 +6,6 @@ using OpenQA.Selenium.Support.UI; // Dependencies WebDriverWait
 using System; // Dependencies TimeSpan
 using System.Threading; // Dependencies Thread
 using TestesAutomatizadosSeleniumWebDriver.UTILS.Common; // Dependencies UTILS.Common
-using TestesAutomatizadosSeleniumWebDriver.PAGES.Cosmos; // Dependencies PAGES.Cosmos
-using TestesAutomatizadosSeleniumWebDriver.VALUES.Common; // Dependencies VALUES.Common
 
 namespace TestesAutomatizadosSeleniumWebDriver.DSL.Common
 {
