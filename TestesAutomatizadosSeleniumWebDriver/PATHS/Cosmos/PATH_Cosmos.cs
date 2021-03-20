@@ -4,7 +4,7 @@
     {
         /* ==================================================  CSS SELECTOR  ==================================================*/
 
-        public static string ImageRecall5Module = "a.login-modulo:nth-child(1)>img:nth-child(1)";
+        public static string ImageRecall0Module = "a.login-modulo:nth-child(1)>img:nth-child(1)";
         public static string ImageAdministracaoPessoalModule = ".content-wrapper>div:nth-child(1)>div:nth-child(2)>section:nth-child(1)>img:nth-child(1)";
         public static string ImagePainelDeGestaoCRMModule = "div.span2:nth-child(3)>section:nth-child(1)>img:nth-child(1)";
         public static string ImageManutencaoModule = "div.span2:nth-child(4)>section:nth-child(1)>img:nth-child(1)";
@@ -46,7 +46,7 @@
         public static string ImageCartaoCorporativoModule = "div.span2:nth-child(40)>section:nth-child(1)>img:nth-child(1)";
         public static string ImageSuporteDePedidosEcommerce = "div.span2:nth-child(41)>section:nth-child(1)>img:nth-child(1)";
 
-        public static string LinkRecall5Module = "a.login-modulo:nth-child(1)>h5:nth-child(2)";
+        public static string LinkRecall0Module = "a.login-modulo:nth-child(1)>h5:nth-child(2)";
         public static string LinkAdministracaoPessoalModule = ".content-wrapper>div:nth-child(1)>div:nth-child(2)>section:nth-child(1)>a:nth-child(2)>h5:nth-child(1)";
         public static string LinkPainelDeGestaoCRMModule = "div.span2:nth-child(3)>section:nth-child(1)>a:nth-child(2)>h5:nth-child(1)";
         public static string LinkManutencaoModule = "div.span2:nth-child(4)>section:nth-child(1)>a:nth-child(2)>h5:nth-child(1)";

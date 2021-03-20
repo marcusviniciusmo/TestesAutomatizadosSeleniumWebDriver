@@ -11,8 +11,8 @@ namespace TestesAutomatizadosSeleniumWebDriver.PAGES.Cosmos
         public PAGE_Cosmos(RemoteWebDriver driverFirefox) : base(driverFirefox) { }
 
         /* ==================================================  IMAGES  ==================================================*/
-        // Imagem do módulo Recall.
-        public IWebElement ImageRecall5Module() { return NovoDriverFirefox.FindElement(By.CssSelector(PATH_Cosmos.ImageRecall5Module)); }
+        // Imagem do módulo Recall 0.
+        public IWebElement ImageRecall0Module() { return NovoDriverFirefox.FindElement(By.CssSelector(PATH_Cosmos.ImageRecall0Module)); }
 
         // Imagem do módulo Administração Pessoal.
         public IWebElement ImageAdministracaoPessoalModule() { return NovoDriverFirefox.FindElement(By.CssSelector(PATH_Cosmos.ImageAdministracaoPessoalModule)); }
@@ -137,8 +137,8 @@ namespace TestesAutomatizadosSeleniumWebDriver.PAGES.Cosmos
         public IWebElement ImageSuporteDePedidosEcommerceModule() { return NovoDriverFirefox.FindElement(By.CssSelector(PATH_Cosmos.ImageSuporteDePedidosEcommerce)); }
 
         /* ==================================================  LINKS  ==================================================*/
-        // Link do módulo Recall.
-        public IWebElement LinkRecall5Module() { return NovoDriverFirefox.FindElement(By.CssSelector(PATH_Cosmos.LinkRecall5Module)); }
+        // Link do módulo Recall 0.
+        public IWebElement LinkRecall0Module() { return NovoDriverFirefox.FindElement(By.CssSelector(PATH_Cosmos.LinkRecall0Module)); }
 
         // Link do módulo Administração Pessoal.
         public IWebElement LinkAdministracaoPessoalModule() { return NovoDriverFirefox.FindElement(By.CssSelector(PATH_Cosmos.LinkAdministracaoPessoalModule)); }
@@ -195,7 +195,7 @@ namespace TestesAutomatizadosSeleniumWebDriver.PAGES.Cosmos
         public IWebElement LinkFrenteDeLojaModule() { return NovoDriverFirefox.FindElement(By.CssSelector(PATH_Cosmos.LinkFrenteDeLojaModule)); }
 
         // Link do módulo Painel Desenvolvimento.
-        public IWebElement LinkPainelDesenvolvimentoModule() { return NovoDriverFirefox.FindElement(By.CssSelector(PATH_Cosmos.LinkFrenteDeLojaModule)); }
+        public IWebElement LinkPainelDesenvolvimentoModule() { return NovoDriverFirefox.FindElement(By.CssSelector(PATH_Cosmos.LinkPainelDesenvolvimentoModule)); }
 
         // Link do módulo Última Chance (Novo).
         public IWebElement LinkUltimaChanceNovoModule() { return NovoDriverFirefox.FindElement(By.CssSelector(PATH_Cosmos.LinkUltimaChanceNovoModule)); }
